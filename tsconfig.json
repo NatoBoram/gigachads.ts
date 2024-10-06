@@ -1,5 +1,5 @@
 {
 	"extends": "@natoboram/gigachads.ts-config/tsconfig.json",
-	"include": ["src"],
-	"exclude": ["node_modules", "dist", "docs"]
+	"include": ["**/*"],
+	"exclude": ["**/dist", "**/docs", "**/node_modules"]
 }
