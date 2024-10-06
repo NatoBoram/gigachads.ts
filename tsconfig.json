@@ -1,5 +1,6 @@
 {
 	"extends": "@natoboram/gigachads.ts-config/tsconfig.json",
+	"compilerOptions": { "rootDir": "." },
 	"include": ["**/*"],
 	"exclude": ["**/dist", "**/docs", "**/node_modules"]
 }
