@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=https://unpkg.com/syncpack@latest/dist/schema.json
+
+semverGroups:
+  - label: workspace
+    dependencies:
+      - $LOCAL
+    dependencyTypes:
+      - "!local"
+    range: "workspace:"
+
+versionGroups:
+  - label: workspace
+    dependencies:
+      - $LOCAL
+    dependencyTypes:
+      - "!local"
+    pinVersion: workspace:*
+
+  - label: node-gyp
+    dependencies:
+      - node-gyp
+    isBanned: true
+
+indent: "\t"
+
+sortFirst:
+  # https://docs.npmjs.com/cli/v10/configuring-npm/package-json
+  - name
+  - version
+  - description
+  - keywords
+  - homepage
+  - bugs
+  - license
+  - author
+  - contributors
+  - funding
+  - files
+  - exports
+  - main
+  - browser
+  - bin
+  - man
+  - directories
+  - repository
+  - scripts
+  - config
+  - dependencies
+  - devDependencies
+  - peerDependencies
+  - peerDependenciesMeta
+  - bundleDependencies
+  - optionalDependencies
+  - overrides
+  - engines
+  - os
+  - cpu
+  - devEngines
+  - private
+  - publishConfig
+  - workspaces
+
+  # https://nodejs.org/api/packages.html#nodejs-packagejson-field-definitions
+  - packageManager
+  - type
+  - imports
+
+  # https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html
+  - types
+  - typesVersions
+
+  # https://esbuild.github.io/api/#main-fields
+  - module

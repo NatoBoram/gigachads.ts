@@ -1,0 +1,82 @@
+{
+	"name": "@natoboram/gigachads.ts-server",
+	"version": "0.0.0",
+	"description": "An example server for the most gigachad project template for TypeScript monorepos",
+	"keywords": [
+		"express",
+		"gigachad",
+		"monorepo",
+		"project-template"
+	],
+	"homepage": "https://github.com/NatoBoram/gigachads.ts/tree/main/apps/server",
+	"bugs": "https://github.com/NatoBoram/gigachads.ts/issues",
+	"license": "Unlicense",
+	"author": {
+		"name": "Nato Boram",
+		"url": "https://github.com/NatoBoram"
+	},
+	"funding": [
+		{
+			"type": "patreon",
+			"url": "https://www.patreon.com/NatoBoram"
+		},
+		{
+			"type": "individual",
+			"url": "https://paypal.me/NatoBoram/5"
+		}
+	],
+	"files": [
+		"dist",
+		"!dist/**/*.test.*"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"main": "dist/index.js",
+	"bin": {
+		"gigachads-ts-server": "dist/main.js"
+	},
+	"repository": "github:NatoBoram/gigachads.ts",
+	"scripts": {
+		"build": "tsc",
+		"clean": "rm -rf .turbo dist docs node_modules tsconfig.tsbuildinfo",
+		"dev": "tsx ./src/main.ts",
+		"docker": "pnpm run docker:build && pnpm run docker:run",
+		"docker:build": "docker build -t gigachads-ts-server .",
+		"docker:kill": "docker ps --format '{{.Image}} {{.ID}}' | grep gigachads-ts-server | awk '{print $2}' | xargs docker kill",
+		"docker:run": "docker run gigachads-ts-server",
+		"docs": "typedoc",
+		"format": "prettier --write .",
+		"lint": "eslint . && markdownlint-cli2 \"**/*.md\" && prettier --check .",
+		"lint:fix": "eslint --fix --quiet .; markdownlint-cli2 \"**/*.md\" --fix; prettier --list-different --write .",
+		"start": "node dist/main.js",
+		"test": "vitest run",
+		"test:watch": "vitest"
+	},
+	"dependencies": {
+		"express": "^4.21.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.11.1",
+		"@natoboram/gigachads.ts-client": "workspace:*",
+		"@natoboram/gigachads.ts-config": "workspace:*",
+		"@types/express": "^5.0.0",
+		"eslint": "^9.11.1",
+		"eslint-config-prettier": "^9.1.0",
+		"globals": "^15.10.0",
+		"markdownlint-cli2": "^0.14.0",
+		"prettier": "^3.3.3",
+		"syncpack": "^13.0.0",
+		"tsx": "^4.19.1",
+		"typedoc": "^0.26.8",
+		"typescript": "^5.6.2",
+		"typescript-eslint": "^8.8.0",
+		"vitest": "^2.1.2"
+	},
+	"type": "module",
+	"types": "dist/index.d.ts",
+	"module": "dist/index.js"
+}

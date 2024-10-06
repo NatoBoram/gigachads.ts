@@ -1,4 +1,7 @@
 {
 	"$schema": "https://typedoc.org/schema.json",
-	"entryPoints": ["./src/index.ts"]
+	"entryPoints": [
+		"./apps/server/src/index.ts",
+		"./packages/client/src/index.ts"
+	]
 }

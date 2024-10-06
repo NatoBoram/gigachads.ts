@@ -1,5 +1,9 @@
 {
 	"extends": "@natoboram/gigachads.ts-config/tsconfig.json",
+	"compilerOptions": {
+		/* Language and Environment */
+		"lib": ["ESNext", "DOM", "DOM.Iterable"]
+	},
 	"include": ["src"],
 	"exclude": ["node_modules", "dist", "docs"]
 }

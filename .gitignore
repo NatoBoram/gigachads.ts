@@ -4,12 +4,8 @@ dist/
 docs/
 package-lock.json
 
-!.env
-.env.*.local
-.env.local
-
-# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,node
+# Created by https://www.toptal.com/developers/gitignore/api/node,linux,macos,turbo,windows
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,linux,macos,turbo,windows
 
 ### Linux ###
 *~
@@ -134,8 +130,10 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-!.env
-.env.*.local
+.env
+.env.development.local
+.env.test.local
+.env.production.local
 .env.local
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -196,6 +194,10 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+### Turbo ###
+# Turborepo task cache
+.turbo
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -222,4 +224,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,node
+# End of https://www.toptal.com/developers/gitignore/api/node,linux,macos,turbo,windows
+
+!.env
+.env.*.local
+.env.local
