@@ -3,15 +3,15 @@
 dependencies:
   - changed-files:
       - any-glob-to-any-file:
-          - ./**/package.json
-          - ./**/pnpm-lock.yaml
           - .github/dependabot.yaml
           - .syncpackrc.yaml
+          - "**/package.json"
+          - "**/pnpm-lock.yaml"
 
 documentation:
   - changed-files:
       - any-glob-to-any-file:
-          - ./**/*.md
+          - "**/*.md"
 # I'd rather wait for that label to exist
 #github_actions:
 #  - changed-files:
