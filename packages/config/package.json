@@ -1,7 +1,7 @@
 {
 	"name": "@natoboram/gigachads.ts-config",
 	"version": "0.0.0",
-	"description": "An example config for the most gigachad project template for TypeScript monorepos.",
+	"description": "An example config for the most gigachad project template for TypeScript monorepos",
 	"keywords": [
 		"eslint",
 		"gigachad",
@@ -9,9 +9,12 @@
 		"monorepo",
 		"prettier",
 		"project-template",
-		"typescript"
+		"syncpack",
+		"turborepo",
+		"typescript",
+		"vitest"
 	],
-	"homepage": "https://github.com/NatoBoram/gigachads.ts",
+	"homepage": "https://github.com/NatoBoram/gigachads.ts/tree/main/packages/config",
 	"bugs": "https://github.com/NatoBoram/gigachads.ts/issues",
 	"license": "Unlicense",
 	"author": {
@@ -32,7 +35,6 @@
 		"eslint.config.js",
 		"tsconfig.json"
 	],
-	"main": "dist/index.js",
 	"repository": "github:NatoBoram/gigachads.ts",
 	"scripts": {
 		"clean": "rm -rf .turbo dist docs node_modules tsconfig.tsbuildinfo",

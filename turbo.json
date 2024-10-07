@@ -1,6 +1,10 @@
 {
 	"$schema": "https://turbo.build/schema.json",
 	"tasks": {
+		"docker": {},
+		"docker:build": {},
+		"docker:kill": {},
+		"docker:run": {},
 		"build": {
 			"dependsOn": ["^build"],
 			"outputs": ["dist/**"]

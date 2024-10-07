@@ -1,26 +1,29 @@
-name: Lint Dependabot PRs
+name: Lint & Fix
 
 on:
   pull_request:
     branches: main
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
-
-    if: github.actor == 'dependabot[bot]'
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          ssh-key: ${{ secrets.DEPLOY_KEY_PRIVATE }}
       - uses: pnpm/action-setup@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
       - uses: actions/setup-node@v4
         with:
           node-version: latest
           cache: pnpm
 
       - run: pnpm install
+      - run: pnpm run build
       - run: pnpm run lint:fix
       - run: pnpm install
 
