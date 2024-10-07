@@ -1,0 +1,38 @@
+name: Lint Dependabot PRs
+
+on:
+  pull_request:
+    branches: main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    if: github.actor == 'dependabot[bot]'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY_PRIVATE }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: pnpm
+
+      - run: pnpm install
+      - run: pnpm run lint:fix
+      - run: pnpm install
+
+      - uses: qoomon/actions--create-commit@v1
+        id: commit
+        with:
+          message: |
+            🎨 pnpm run lint:fix
+
+            [dependabot skip]
+          skip-empty: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - if: steps.commit.outputs.commit != null
+        run: git push
