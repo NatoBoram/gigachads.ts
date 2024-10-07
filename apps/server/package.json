@@ -3,10 +3,15 @@
 	"version": "0.0.0",
 	"description": "An example server for the most gigachad project template for TypeScript monorepos",
 	"keywords": [
+		"eslint",
 		"express",
 		"gigachad",
+		"markdownlint",
 		"monorepo",
-		"project-template"
+		"prettier",
+		"project-template",
+		"typescript",
+		"vitest"
 	],
 	"homepage": "https://github.com/NatoBoram/gigachads.ts/tree/main/apps/server",
 	"bugs": "https://github.com/NatoBoram/gigachads.ts/issues",
@@ -69,7 +74,6 @@
 		"globals": "^15.10.0",
 		"markdownlint-cli2": "^0.14.0",
 		"prettier": "^3.3.3",
-		"syncpack": "^13.0.0",
 		"tsx": "^4.19.1",
 		"typedoc": "^0.26.8",
 		"typescript": "^5.6.2",

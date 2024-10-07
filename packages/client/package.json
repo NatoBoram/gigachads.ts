@@ -1,11 +1,16 @@
 {
 	"name": "@natoboram/gigachads.ts-client",
 	"version": "0.0.0",
-	"description": "An example client for the most gigachad project template for TypeScript monorepos.",
+	"description": "An example client for the most gigachad project template for TypeScript monorepos",
 	"keywords": [
+		"eslint",
 		"gigachad",
+		"markdownlint",
 		"monorepo",
-		"project-template"
+		"prettier",
+		"project-template",
+		"typescript",
+		"vitest"
 	],
 	"homepage": "https://github.com/NatoBoram/gigachads.ts/tree/main/packages/client",
 	"bugs": "https://github.com/NatoBoram/gigachads.ts/issues",
@@ -39,29 +44,21 @@
 	"scripts": {
 		"build": "tsc",
 		"clean": "rm -rf .turbo dist docs node_modules tsconfig.tsbuildinfo",
-		"dev": "tsx ./src/main.ts",
 		"docs": "typedoc",
 		"format": "prettier --write .",
 		"lint": "eslint . && markdownlint-cli2 \"**/*.md\" && prettier --check .",
 		"lint:fix": "eslint --fix --quiet .; markdownlint-cli2 \"**/*.md\" --fix; prettier --list-different --write .",
-		"start": "node dist/main.js",
 		"test": "vitest run",
 		"test:watch": "vitest"
-	},
-	"dependencies": {
-		"express": "^4.21.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.11.1",
 		"@natoboram/gigachads.ts-config": "workspace:*",
-		"@types/express": "^5.0.0",
 		"eslint": "^9.11.1",
 		"eslint-config-prettier": "^9.1.0",
 		"globals": "^15.10.0",
 		"markdownlint-cli2": "^0.14.0",
 		"prettier": "^3.3.3",
-		"syncpack": "^13.0.0",
-		"tsx": "^4.19.1",
 		"typedoc": "^0.26.8",
 		"typescript": "^5.6.2",
 		"typescript-eslint": "^8.8.0",
