@@ -1,2 +1,2 @@
-export * from "./app.js"
-export type * from "./express/index.js"
+export * from "./app.ts"
+export type * from "./express/index.ts"

@@ -1,2 +1,2 @@
-export * from "./gigachads_client.js"
-export type * from "./interfaces/index.js"
+export * from "./gigachads_client.ts"
+export type * from "./interfaces/index.ts"
