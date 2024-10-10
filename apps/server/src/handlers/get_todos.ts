@@ -3,9 +3,9 @@ import type {
 	GetTodosResponse,
 } from "@natoboram/gigachads.ts-client"
 import type { RequestHandler } from "express"
-import type { ParamsDictionary } from "../express/index.js"
-import type { LocalsObj } from "../express/locals_obj.js"
-import { todos } from "../models/todo.js"
+import type { ParamsDictionary } from "../express/index.ts"
+import type { LocalsObj } from "../express/locals_obj.ts"
+import { todos } from "../models/todo.ts"
 
 // eslint-disable-next-line func-style
 export const getTodos: RequestHandler<

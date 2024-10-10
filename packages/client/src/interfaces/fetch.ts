@@ -1,4 +1,4 @@
-import type { Response } from "./response.js"
+import type { Response } from "./response.ts"
 
 export type Fetch<T, E = unknown> = (
 	input: RequestInfo | URL,

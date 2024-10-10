@@ -1,5 +1,5 @@
 import type { UUID } from "crypto"
-import type { GlobalFetch, Response } from "./interfaces/index.js"
+import type { GlobalFetch, Response } from "./interfaces/index.ts"
 import type {
 	GetTodoResponse,
 	GetTodosParams,
@@ -10,7 +10,7 @@ import type {
 	PostTodoResponse,
 	PutTodoBody,
 	PutTodoResponse,
-} from "./interfaces/todo.js"
+} from "./interfaces/todo.ts"
 
 export class GigachadsClient {
 	constructor(

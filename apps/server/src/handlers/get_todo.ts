@@ -1,9 +1,9 @@
 import type { UUID } from "crypto"
 import type { RequestHandler } from "express"
-import type { ParamsDictionary, ParsedQs } from "../express/index.js"
-import type { LocalsObj } from "../express/locals_obj.js"
-import type { Todo } from "../models/todo.js"
-import { todos } from "../models/todo.js"
+import type { ParamsDictionary, ParsedQs } from "../express/index.ts"
+import type { LocalsObj } from "../express/locals_obj.ts"
+import type { Todo } from "../models/todo.ts"
+import { todos } from "../models/todo.ts"
 
 interface GetTodoParams extends ParamsDictionary {
 	readonly id: UUID
