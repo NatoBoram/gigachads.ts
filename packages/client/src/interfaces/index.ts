@@ -1,3 +1,3 @@
-export type * from "./fetch.js"
-export type * from "./response.js"
-export type * from "./todo.js"
+export type * from "./fetch.ts"
+export type * from "./response.ts"
+export type * from "./todo.ts"
