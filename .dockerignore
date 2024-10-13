@@ -1,13 +1,20 @@
 # Folders
+.git
+.github
+.vscode
 dist
 docs
 node_modules
 
 # Files
 .dockerignore
+.editorconfig
 .gitignore
+.markdownlint-cli2.yaml
+.markdownlint.yaml
 .prettierignore
 .prettierrc.yaml
+.syncpackrc.yaml
 *.md
 *.test.ts
 *.tsbuildinfo
