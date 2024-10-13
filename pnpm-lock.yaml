@@ -50,9 +50,6 @@ importers:
 
   apps/server:
     dependencies:
-      '@natoboram/gigachads.ts-client':
-        specifier: workspace:*
-        version: link:../../packages/client
       express:
         specifier: ^4.21.0
         version: 4.21.0
@@ -60,6 +57,9 @@ importers:
       '@eslint/js':
         specifier: ^9.12.0
         version: 9.12.0
+      '@natoboram/gigachads.ts-client':
+        specifier: workspace:*
+        version: link:../../packages/client
       '@natoboram/gigachads.ts-config':
         specifier: workspace:*
         version: link:../../packages/config
