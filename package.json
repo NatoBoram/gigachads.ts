@@ -45,7 +45,7 @@
 		"docs": "typedoc",
 		"format": "syncpack format && prettier --write .",
 		"lint": "syncpack lint && eslint . && markdownlint-cli2 \"**/*.md\" && prettier --check .",
-		"lint:fix": "syncpack fix-mismatches && eslint --fix --quiet .; markdownlint-cli2 \"**/*.md\" --fix; prettier --list-different --write .",
+		"lint:fix": "syncpack fix-mismatches; syncpack format; eslint --fix --quiet .; markdownlint-cli2 \"**/*.md\" --fix; prettier --list-different --write .",
 		"start": "turbo run start",
 		"test": "turbo run test"
 	},
