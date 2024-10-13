@@ -1,18 +1,19 @@
 import type {
+	GetTodosBody,
 	GetTodosParams,
+	GetTodosQuery,
 	GetTodosResponse,
 } from "@natoboram/gigachads.ts-client"
 import type { RequestHandler } from "express"
-import type { ParamsDictionary } from "../express/index.ts"
 import type { LocalsObj } from "../express/locals_obj.ts"
 import { todos } from "../models/todo.ts"
 
 // eslint-disable-next-line func-style
 export const getTodos: RequestHandler<
-	ParamsDictionary,
-	GetTodosResponse,
-	undefined,
 	GetTodosParams,
+	GetTodosResponse,
+	GetTodosBody,
+	GetTodosQuery,
 	LocalsObj
 > = (req, res) => {
 	const found = todos.filter(todo => {

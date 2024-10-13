@@ -1,7 +1,21 @@
 import type { UUID } from "crypto"
 
+export type DeleteTodoBody = undefined
+export type DeleteTodoParams = GetTodoParams
+export type DeleteTodoQuery = undefined
+export type DeleteTodoResponse = undefined
+export type GetTodoBody = undefined
+export type GetTodoQuery = undefined
+export type GetTodosBody = undefined
+export type GetTodosParams = undefined
+export type PatchTodoParams = GetTodoParams
+export type PatchTodoQuery = undefined
 export type PatchTodoResponse = GetTodoResponse
+export type PostTodoParams = undefined
+export type PostTodoQuery = undefined
 export type PostTodoResponse = GetTodoResponse
+export type PutTodoParams = GetTodoParams
+export type PutTodoQuery = undefined
 export type PutTodoResponse = GetTodoResponse
 
 export interface GetTodoParams {
@@ -14,7 +28,7 @@ export interface GetTodoResponse {
 	readonly text: string
 }
 
-export interface GetTodosParams {
+export interface GetTodosQuery {
 	readonly done?: boolean
 	readonly limit?: number
 	readonly page?: number

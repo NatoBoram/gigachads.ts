@@ -1,57 +1,63 @@
-import type { UUID } from "crypto"
 import type { GlobalFetch, Response } from "./interfaces/index.ts"
 import type {
+	DeleteTodoParams,
+	DeleteTodoResponse,
+	GetTodoParams,
 	GetTodoResponse,
-	GetTodosParams,
+	GetTodosQuery,
 	GetTodosResponse,
 	PatchTodoBody,
+	PatchTodoParams,
 	PatchTodoResponse,
 	PostTodoBody,
 	PostTodoResponse,
 	PutTodoBody,
+	PutTodoParams,
 	PutTodoResponse,
 } from "./interfaces/todo.ts"
 
-export class GigachadsClient {
+export class GigachadsServerClient {
 	constructor(
 		private readonly base: URL,
 		private readonly fetch: GlobalFetch,
 		private readonly token: string,
 	) {}
 
-	async deleteTodo(id: UUID): Promise<Response<unknown>> {
+	async deleteTodo(
+		id: DeleteTodoParams["id"],
+	): Promise<Response<DeleteTodoResponse>> {
 		const url = this.gcUrl(`/todos/${id}`)
 		return this.delete(url)
 	}
 
-	async getTodo(id: UUID): Promise<Response<GetTodoResponse>> {
+	async getTodo(id: GetTodoParams["id"]): Promise<Response<GetTodoResponse>> {
 		const url = this.gcUrl(`/todos/${id}`)
 		return this.get(url)
 	}
 
-	async getTodos(params: GetTodosParams): Promise<Response<GetTodosResponse>> {
-		const url = this.gcUrl("/todos", { ...params })
+	async getTodos(query: GetTodosQuery): Promise<Response<GetTodosResponse>> {
+		const url = this.gcUrl("/todos", { ...query })
 		return this.get(url)
 	}
 
 	async patchTodo(
-		id: UUID,
+		id: PatchTodoParams["id"],
 		body: PatchTodoBody,
 	): Promise<Response<PatchTodoResponse>> {
-		const url = this.gcUrl(`/todos/${id}`, { ...body })
+		const url = this.gcUrl(`/todos/${id}`)
 		return this.patch(url, body)
 	}
 
 	async postTodo(body: PostTodoBody): Promise<Response<PostTodoResponse>> {
-		const url = this.gcUrl("/todos", { ...body })
+		const url = this.gcUrl("/todos")
 		return this.post(url, body)
 	}
 
 	async putTodo(
-		id: UUID,
+		id: PutTodoParams["id"],
 		body: PutTodoBody,
 	): Promise<Response<PutTodoResponse>> {
-		const url = this.gcUrl(`/todos/${id}`, { ...body })
+		const url = this.gcUrl(`/todos/${id}`)
 		return this.put(url, body)
 	}
 
@@ -79,7 +85,7 @@ export class GigachadsClient {
 	 * Before creating the final URL, leading slashes are removed from the path
 	 * and a trailing slash is added to the base.
 	 */
-	private gcUrl(path: string, params?: Record<string, unknown>): URL {
+	private gcUrl(path: string, query?: Record<string, unknown>): URL {
 		const url = new URL(
 			// The path should not start with a slash
 			path.replace(/^\/+/, ""),
@@ -87,8 +93,8 @@ export class GigachadsClient {
 			this.base.toString().replace(/([^/]$)/, "$1/"),
 		)
 
-		if (params)
-			for (const [name, value] of Object.entries(params)) {
+		if (query)
+			for (const [name, value] of Object.entries(query)) {
 				if (value instanceof Date)
 					url.searchParams.set(name, value.toISOString())
 				else url.searchParams.set(name, String(value))
