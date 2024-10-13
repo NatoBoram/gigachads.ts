@@ -27,4 +27,8 @@ jobs:
       - run: pnpm install --frozen-lockfile --strict-peer-dependencies
       - run: pnpm run build
       - run: pnpm run lint
-      - run: TOKEN=${{ secrets.SERVER_TOKEN }} pnpm run test
+      - run: |
+          echo "TOKEN=$TOKEN" >> ./apps/server/.env.local
+          pnpm run test
+        env:
+          TOKEN: ${{ secrets.SERVER_TOKEN }}
