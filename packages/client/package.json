@@ -43,6 +43,7 @@
 	"repository": "github:NatoBoram/gigachads.ts",
 	"scripts": {
 		"build": "tsc",
+		"build:watch": "tsc --watch",
 		"clean": "rm -rf .turbo dist docs node_modules tsconfig.tsbuildinfo",
 		"docs": "typedoc",
 		"format": "prettier --write .",
