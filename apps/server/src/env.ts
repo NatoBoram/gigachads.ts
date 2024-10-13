@@ -1,3 +1,5 @@
-const token = process.env["TOKEN"]
-if (!token) throw new Error("$TOKEN is missing")
-export const TOKEN: string = token
+import { envString, loadEnv } from "@natoboram/load_env"
+
+loadEnv()
+
+export const TOKEN: string = envString("TOKEN")
