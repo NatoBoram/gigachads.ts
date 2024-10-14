@@ -64,6 +64,12 @@ export default tseslint.config(
 			"@typescript-eslint/return-await": "error",
 			"@typescript-eslint/sort-type-constituents": "error",
 			"@typescript-eslint/switch-exhaustiveness-check": "error",
+
+			/**
+			 * @see https://github.com/typescript-eslint/typescript-eslint/issues/8488
+			 * @see https://github.com/eslint/eslint/issues/18842
+			 * @see https://github.com/typescript-eslint/typescript-eslint/issues/10127
+			 */
 			"func-style": ["error", "declaration"],
 		},
 	},
