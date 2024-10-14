@@ -1,19 +1,16 @@
 import type { GlobalFetch, Response } from "./interfaces/index.ts"
 import type {
-	DeleteTodoParams,
 	DeleteTodoResponse,
-	GetTodoParams,
 	GetTodoResponse,
 	GetTodosQuery,
 	GetTodosResponse,
 	PatchTodoBody,
-	PatchTodoParams,
 	PatchTodoResponse,
 	PostTodoBody,
 	PostTodoResponse,
 	PutTodoBody,
-	PutTodoParams,
 	PutTodoResponse,
+	TodoParams,
 } from "./interfaces/todo.ts"
 
 export class GigachadsServerClient {
@@ -24,13 +21,13 @@ export class GigachadsServerClient {
 	) {}
 
 	async deleteTodo(
-		id: DeleteTodoParams["id"],
+		id: TodoParams["id"],
 	): Promise<Response<DeleteTodoResponse>> {
 		const url = this.gcUrl(`/todos/${id}`)
 		return this.delete(url)
 	}
 
-	async getTodo(id: GetTodoParams["id"]): Promise<Response<GetTodoResponse>> {
+	async getTodo(id: TodoParams["id"]): Promise<Response<GetTodoResponse>> {
 		const url = this.gcUrl(`/todos/${id}`)
 		return this.get(url)
 	}
@@ -41,7 +38,7 @@ export class GigachadsServerClient {
 	}
 
 	async patchTodo(
-		id: PatchTodoParams["id"],
+		id: TodoParams["id"],
 		body: PatchTodoBody,
 	): Promise<Response<PatchTodoResponse>> {
 		const url = this.gcUrl(`/todos/${id}`)
@@ -54,7 +51,7 @@ export class GigachadsServerClient {
 	}
 
 	async putTodo(
-		id: PutTodoParams["id"],
+		id: TodoParams["id"],
 		body: PutTodoBody,
 	): Promise<Response<PutTodoResponse>> {
 		const url = this.gcUrl(`/todos/${id}`)

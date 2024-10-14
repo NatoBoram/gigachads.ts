@@ -1,8 +1,8 @@
 import type {
 	GetTodoBody,
-	GetTodoParams,
 	GetTodoQuery,
 	GetTodoResponse,
+	TodoParams,
 } from "@natoboram/gigachads.ts-client"
 import type { RequestHandler } from "express"
 import type { LocalsObj } from "../express/locals_obj.ts"
@@ -10,7 +10,7 @@ import { todos } from "../models/todo.ts"
 
 // eslint-disable-next-line func-style
 export const getTodo: RequestHandler<
-	GetTodoParams,
+	TodoParams,
 	GetTodoResponse,
 	GetTodoBody,
 	GetTodoQuery,

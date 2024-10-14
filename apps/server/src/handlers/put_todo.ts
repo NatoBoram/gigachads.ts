@@ -1,8 +1,8 @@
 import type {
 	PutTodoBody,
-	PutTodoParams,
 	PutTodoQuery,
 	PutTodoResponse,
+	TodoParams,
 } from "@natoboram/gigachads.ts-client"
 import type { RequestHandler } from "express"
 import type { LocalsObj } from "../express/locals_obj.ts"
@@ -11,7 +11,7 @@ import { todos, type Todo } from "../models/todo.ts"
 
 // eslint-disable-next-line func-style
 export const putTodo: RequestHandler<
-	PutTodoParams,
+	TodoParams,
 	PutTodoResponse,
 	PutTodoBody,
 	PutTodoQuery,

@@ -1,8 +1,8 @@
 import type {
 	PostTodoBody,
-	PostTodoParams,
 	PostTodoQuery,
 	PostTodoResponse,
+	TodosParams,
 } from "@natoboram/gigachads.ts-client"
 import { randomUUID } from "crypto"
 import type { RequestHandler } from "express"
@@ -11,7 +11,7 @@ import { todos } from "../models/todo.ts"
 
 // eslint-disable-next-line func-style
 export const postTodo: RequestHandler<
-	PostTodoParams,
+	TodosParams,
 	PostTodoResponse,
 	PostTodoBody,
 	PostTodoQuery,
