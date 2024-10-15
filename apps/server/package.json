@@ -63,7 +63,7 @@
 	},
 	"dependencies": {
 		"@natoboram/load_env": "^0.0.1",
-		"express": "^4.21.0"
+		"express": "^5.0.1"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.12.0",
