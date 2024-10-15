@@ -4,6 +4,7 @@
 
 The most gigachad project template for TypeScript monorepos. Based on [@natoboram/gigachad.ts](https://github.com/NatoBoram/gigachad.ts).
 
+- Containerize with [Docker](https://github.com/docker/cli)
 - ~~Deliver continuously with GitHub Workflow~~
 - Document with [TypeDoc](https://github.com/TypeStrong/typedoc)
 - Enforce format-on-save in [VSCode](https://github.com/microsoft/vscode)
@@ -13,8 +14,8 @@ The most gigachad project template for TypeScript monorepos. Based on [@natobora
 - Lint markdown with [markdownlint](https://github.com/DavidAnson/markdownlint)
 - Manage packages with [pnpm](https://github.com/pnpm/pnpm)
 - Manage your monorepo with [Turborepo](https://github.com/vercel/turborepo)
+- Pledge your respect with the [Contributor Covenant](https://github.com/EthicalSource/contributor_covenant)
 - Run with [tsx](https://github.com/privatenumber/tsx)
-- Scare away bigots with [Contributor Covenant](https://github.com/EthicalSource/contributor_covenant)
 - Synchronize versions with [Syncpack](https://github.com/JamieMason/syncpack)
 - Test units with [Vitest](https://github.com/vitest-dev/vitest)
 - Update dependencies with [Dependabot](https://github.com/dependabot/dependabot-core)
