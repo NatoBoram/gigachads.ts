@@ -8,6 +8,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,10 +29,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-turbo-
 
-      - run: pnpm install
+      - run: pnpm install --no-frozen-lockfile --fix-lockfile
       - run: pnpm run build
       - run: pnpm run lint:fix
-      - run: pnpm install --fix-lockfile
+      - run: pnpm install --no-frozen-lockfile --fix-lockfile
+      - run: git add .
 
       - uses: qoomon/actions--create-commit@v1
         id: commit
