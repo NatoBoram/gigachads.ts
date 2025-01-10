@@ -7,7 +7,8 @@ import type {
 import type { RequestHandler } from "express"
 import type { LocalsObj } from "../express/locals_obj.ts"
 import type { Mutable } from "../interfaces/mutable.ts"
-import { todos, type Todo } from "../models/todo.ts"
+import type { Todo } from "../models/todo.ts"
+import { todos } from "../models/todo.ts"
 
 // eslint-disable-next-line func-style
 export const putTodo: RequestHandler<

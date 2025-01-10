@@ -51,8 +51,8 @@ importers:
   apps/server:
     dependencies:
       '@natoboram/load_env':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^1.0.0
+        version: 1.0.0
       express:
         specifier: ^5.0.1
         version: 5.0.1
@@ -524,8 +524,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
 
-  '@natoboram/load_env@0.0.1':
-    resolution: {integrity: sha512-T+28ZjOvLYJ6PNLYR2T6l7Lajo7wTEBfjqM0r8B375wbWUNQPeyjdL+exJmTRmJuZ5I7aW0yR/UwaLJj6b3q8w==}
+  '@natoboram/load_env@1.0.0':
+    resolution: {integrity: sha512-nlrFCVlEV9Z0FhsTrC3I0vDV9dhCtiK28OV2QBxDtwjXd3p6Ed52Ftyhc3LGlan9Yy+9UDR1Hqw8W5Fqf0q//w==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2298,7 +2298,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
-  '@natoboram/load_env@0.0.1':
+  '@natoboram/load_env@1.0.0':
     dependencies:
       dotenv: 16.4.5
 

@@ -1,5 +1,6 @@
-import { envString, loadEnv } from "@natoboram/load_env"
+import { envUuid, loadEnv } from "@natoboram/load_env"
+import type { UUID } from "crypto"
 
 loadEnv()
 
-export const TOKEN: string = envString("TOKEN")
+export const TOKEN: UUID = envUuid("TOKEN")
