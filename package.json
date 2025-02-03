@@ -62,7 +62,7 @@
 		"typedoc": "^0.27.6",
 		"typescript": "5.8.0-beta",
 		"typescript-eslint": "^8.19.1",
-		"vitest": "^2.1.8"
+		"vitest": "^3.0.4"
 	},
 	"workspaces": [
 		"apps/*",
