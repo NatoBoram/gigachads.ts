@@ -48,7 +48,7 @@
 	"scripts": {
 		"build": "tsc",
 		"clean": "rm -rf .turbo dist docs node_modules tsconfig.tsbuildinfo",
-		"dev": "tsx ./src/main.ts",
+		"dev": "node ./src/main.ts",
 		"docker": "pnpm run docker:build && pnpm run docker:run",
 		"docker:build": "docker build --tag gigachads-ts-server . --build-context repo=../..",
 		"docker:kill": "docker ps --format '{{.Image}} {{.ID}}' | grep gigachads-ts-server | awk '{print $2}' | xargs docker kill",
@@ -75,9 +75,8 @@
 		"globals": "^15.14.0",
 		"markdownlint-cli2": "^0.17.1",
 		"prettier": "^3.4.2",
-		"tsx": "^4.19.2",
 		"typedoc": "^0.27.6",
-		"typescript": "5.7.2",
+		"typescript": "5.8.0-beta",
 		"typescript-eslint": "^8.19.1",
 		"vitest": "^2.1.8"
 	},
