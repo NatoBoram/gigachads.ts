@@ -1,10 +1,15 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: main
+  merge_group:
+    branches:
+      - main
   pull_request:
-    branches: main
+    branches:
+      - main
+  push:
+    branches:
+      - main
 
 jobs:
   test:
@@ -21,8 +26,8 @@ jobs:
             ${{ runner.os }}-turbo-
       - uses: actions/setup-node@v4
         with:
-          node-version: latest
           cache: pnpm
+          node-version: latest
 
       - run: pnpm install --frozen-lockfile --strict-peer-dependencies
       - run: pnpm run build
@@ -32,3 +37,51 @@ jobs:
           pnpm run test
         env:
           TOKEN: ${{ secrets.SERVER_TOKEN }}
+
+  fix:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    if: failure() && github.event_name == 'pull_request' && github.actor != 'github-actions[bot]' && github.actor != 'nektos/act'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+      - uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version: latest
+
+      - run: |
+          corepack use pnpm@latest
+
+          pnpm install --fix-lockfile --no-frozen-lockfile
+          pnpm run build
+          pnpm run lint:fix
+
+          pnpm install --fix-lockfile --no-frozen-lockfile
+          pnpm run build
+          pnpm run lint:fix
+
+          git add .
+      - id: commit
+        uses: qoomon/actions--create-commit@v1
+        with:
+          message: |
+            💚 Auto-fix
+
+            [dependabot skip]
+          skip-empty: true
+
+      - if: steps.commit.outputs.commit
+        run: git push

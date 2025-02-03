@@ -14,11 +14,15 @@ import type {
 } from "./interfaces/todo.ts"
 
 export class GigachadsServerClient {
-	constructor(
-		private readonly base: URL,
-		private readonly fetch: GlobalFetch,
-		private readonly token: string,
-	) {}
+	private readonly base: URL
+	private readonly fetch: GlobalFetch
+	private readonly token: string
+
+	constructor(base: URL, fetch: GlobalFetch, token: string) {
+		this.base = base
+		this.fetch = fetch
+		this.token = token
+	}
 
 	async deleteTodo(
 		id: TodoParams["id"],
