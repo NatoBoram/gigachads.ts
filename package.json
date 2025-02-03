@@ -55,7 +55,7 @@
 		"eslint": "^9.17.0",
 		"eslint-config-prettier": "^9.1.0",
 		"globals": "^15.14.0",
-		"markdownlint-cli2": "^0.17.1",
+		"markdownlint-cli2": "^0.17.2",
 		"prettier": "^3.4.2",
 		"syncpack": "^13.0.0",
 		"turbo": "^2.3.3",
