@@ -15,7 +15,7 @@ The most gigachad project template for TypeScript monorepos. Based on [@natobora
 - Manage packages with [pnpm](https://github.com/pnpm/pnpm)
 - Manage your monorepo with [Turborepo](https://github.com/vercel/turborepo)
 - Pledge your respect with the [Contributor Covenant](https://github.com/EthicalSource/contributor_covenant)
-- Run with [tsx](https://github.com/privatenumber/tsx)
+- Run with ~~[tsx](https://github.com/privatenumber/tsx)~~ [Node.js](https://nodejs.org/api/typescript.html#type-stripping)
 - Synchronize versions with [Syncpack](https://github.com/JamieMason/syncpack)
 - Test units with [Vitest](https://github.com/vitest-dev/vitest)
 - Update dependencies with [Dependabot](https://github.com/dependabot/dependabot-core)
