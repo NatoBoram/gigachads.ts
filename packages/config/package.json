@@ -43,14 +43,14 @@
 		"lint:fix": "eslint --fix --quiet .; markdownlint-cli2 \"**/*.md\" --fix; prettier --list-different --write ."
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.21.0",
-		"eslint": "^9.21.0",
-		"eslint-config-prettier": "^10.0.2",
+		"@eslint/js": "^9.28.0",
+		"eslint": "^9.28.0",
+		"eslint-config-prettier": "^10.1.5",
 		"globals": "^15.14.0",
-		"markdownlint-cli2": "^0.17.2",
+		"markdownlint-cli2": "^0.18.1",
 		"prettier": "^3.5.2",
 		"typescript": "5.8.2",
-		"typescript-eslint": "^8.25.0"
+		"typescript-eslint": "^8.33.0"
 	},
 	"packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a",
 	"type": "module"
