@@ -63,13 +63,13 @@
 	},
 	"dependencies": {
 		"@natoboram/load_env": "^1.0.0",
-		"express": "^5.0.1"
+		"express": "^5.1.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.21.0",
 		"@natoboram/gigachads.ts-client": "workspace:*",
 		"@natoboram/gigachads.ts-config": "workspace:*",
-		"@types/express": "^5.0.0",
+		"@types/express": "^5.0.1",
 		"eslint": "^9.21.0",
 		"eslint-config-prettier": "^10.0.2",
 		"globals": "^15.14.0",
