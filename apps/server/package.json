@@ -62,7 +62,7 @@
 		"test:watch": "vitest"
 	},
 	"dependencies": {
-		"@natoboram/load_env": "^1.0.2",
+		"@natoboram/load_env": "^1.0.3",
 		"express": "^5.1.0"
 	},
 	"devDependencies": {
@@ -71,11 +71,11 @@
 		"@natoboram/gigachads.ts-config": "workspace:*",
 		"@types/express": "^5.0.3",
 		"eslint": "^9.30.1",
-		"eslint-config-prettier": "^10.1.5",
+		"eslint-config-prettier": "^10.1.8",
 		"globals": "^16.3.0",
 		"markdownlint-cli2": "^0.18.1",
 		"prettier": "^3.6.2",
-		"typedoc": "^0.28.7",
+		"typedoc": "^0.28.8",
 		"typescript": "5.8.3",
 		"typescript-eslint": "^8.35.1",
 		"vitest": "^3.2.4"
