@@ -3,8 +3,6 @@ import prettier from "eslint-config-prettier"
 import globals from "globals"
 import tseslint from "typescript-eslint"
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access */
-
 export default tseslint.config(
 	{
 		languageOptions: {
@@ -17,6 +15,16 @@ export default tseslint.config(
 	...tseslint.configs.strictTypeChecked,
 	...tseslint.configs.stylisticTypeChecked,
 	prettier,
+
+	{
+		rules: {
+			"@typescript-eslint/consistent-type-assertions": [
+				"error",
+				{ assertionStyle: "never" },
+			],
+		},
+		ignores: ["**/*.test.ts"],
+	},
 
 	{
 		rules: {
@@ -73,6 +81,8 @@ export default tseslint.config(
 			"func-style": ["error", "declaration"],
 		},
 	},
+
+	{ extends: [tseslint.configs.disableTypeChecked], files: ["**/*.js"] },
 
 	{
 		ignores: [
