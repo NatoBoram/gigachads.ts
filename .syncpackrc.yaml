@@ -55,15 +55,21 @@ sortFirst:
   - engines
   - os
   - cpu
+  - libc
   - devEngines
   - private
   - publishConfig
   - workspaces
 
-  # https://nodejs.org/api/packages.html#nodejs-packagejson-field-definitions
+  # https://nodejs.org/download/release/v23.10.0/docs/api/packages.html#nodejs-packagejson-field-definitions
   - packageManager
   - type
   - imports
+
+  # https://pnpm.io/9.x/package_json
+  - dependenciesMeta
+  - pnpm
+  - resolutions
 
   # https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html
   - types
