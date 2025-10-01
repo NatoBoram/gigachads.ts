@@ -66,18 +66,18 @@
 		"express": "^5.1.0"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.32.0",
+		"@eslint/js": "^9.36.0",
 		"@natoboram/gigachads.ts-client": "workspace:*",
 		"@natoboram/gigachads.ts-config": "workspace:*",
 		"@types/express": "^5.0.3",
-		"eslint": "^9.32.0",
+		"eslint": "^9.36.0",
 		"eslint-config-prettier": "^10.1.8",
-		"globals": "^16.3.0",
+		"globals": "^16.4.0",
 		"markdownlint-cli2": "^0.18.1",
 		"prettier": "^3.6.2",
 		"typedoc": "^0.28.9",
 		"typescript": "5.9.2",
-		"typescript-eslint": "~8.35.1",
+		"typescript-eslint": "~8.45.0",
 		"vitest": "^3.2.4"
 	},
 	"packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a",
