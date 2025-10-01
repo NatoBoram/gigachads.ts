@@ -62,7 +62,7 @@
 		"test:watch": "vitest"
 	},
 	"dependencies": {
-		"@natoboram/load_env": "^1.0.3",
+		"@natoboram/load_env": "^2.0.0",
 		"express": "^5.1.0"
 	},
 	"devDependencies": {

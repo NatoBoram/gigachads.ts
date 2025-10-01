@@ -51,8 +51,8 @@ importers:
   apps/server:
     dependencies:
       '@natoboram/load_env':
-        specifier: ^1.0.3
-        version: 1.0.3
+        specifier: ^2.0.0
+        version: 2.0.0
       express:
         specifier: ^5.1.0
         version: 5.1.0
@@ -384,8 +384,9 @@ packages:
   '@jridgewell/sourcemap-codec@1.5.4':
     resolution: {integrity: sha512-VT2+G1VQs/9oz078bLrYbecdZKs912zQlkelYpuf+SXF+QvZDYJlbx/LSx+meSAwdDFnF8FVXW92AVjjkVmgFw==}
 
-  '@natoboram/load_env@1.0.3':
-    resolution: {integrity: sha512-q+OsGFywFljl3mo5aiECfVTJ2KFLSBoXNpsoRKCWNzzvvzJQnrwc3A8VGAAFCb7Phto0nPEgPRzWywV/62kMAw==}
+  '@natoboram/load_env@2.0.0':
+    resolution: {integrity: sha512-O4/Kex+HK0XCXQFA8BBjxhsIxnFTVZR/HVoCBoHZkDU9rqJMo5K/ftIm0eJAHWLoNotF9rx7131Wu1uPjSJsXw==}
+    engines: {node: '>=22.12'}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -881,10 +882,6 @@ packages:
 
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
-
-  dotenv@16.6.1:
-    resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
-    engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -2078,9 +2075,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.4': {}
 
-  '@natoboram/load_env@1.0.3':
-    dependencies:
-      dotenv: 16.6.1
+  '@natoboram/load_env@2.0.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -2559,8 +2554,6 @@ snapshots:
   devlop@1.1.0:
     dependencies:
       dequal: 2.0.3
-
-  dotenv@16.6.1: {}
 
   dunder-proto@1.0.1:
     dependencies:
