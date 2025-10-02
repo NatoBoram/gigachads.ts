@@ -4,6 +4,7 @@
 
 The most gigachad project template for TypeScript monorepos. Based on [@natoboram/gigachad.ts](https://github.com/NatoBoram/gigachad.ts).
 
+- Build with [tsgo](https://github.com/microsoft/typescript-go)
 - Containerize with [Docker](https://github.com/docker/cli)
 - ~~Deliver continuously with GitHub Workflow~~
 - Document with [TypeDoc](https://github.com/TypeStrong/typedoc)
