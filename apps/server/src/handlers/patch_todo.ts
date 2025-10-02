@@ -4,20 +4,20 @@ import type {
 	PatchTodoResponse,
 	TodoParams,
 } from "@natoboram/gigachads.ts-client"
-import type { RequestHandler } from "express"
-import type { LocalsObj } from "../express/locals_obj.ts"
+import type { Locals, RequestHandler } from "express"
 import type { Mutable } from "../interfaces/mutable.ts"
 import type { Todo } from "../models/todo.ts"
 import { todos } from "../models/todo.ts"
 
-// eslint-disable-next-line func-style
-export const patchTodo: RequestHandler<
+type PatchTodo = RequestHandler<
 	TodoParams,
 	PatchTodoResponse,
 	PatchTodoBody,
 	PatchTodoQuery,
-	LocalsObj
-> = (req, res) => {
+	Locals
+>
+
+export const patchTodo: PatchTodo = ((req, res) => {
 	const index = todos.findIndex(todo => todo.id === req.params.id)
 	if (index === -1) return void res.sendStatus(404)
 
@@ -40,4 +40,4 @@ export const patchTodo: RequestHandler<
 
 	todos[index] = found
 	return void res.json(found)
-}
+}) satisfies PatchTodo
