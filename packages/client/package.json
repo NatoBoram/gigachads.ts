@@ -58,6 +58,7 @@
 		"eslint": "^9.32.0",
 		"eslint-config-prettier": "^10.1.8",
 		"globals": "^16.3.0",
+		"jiti": "^2.6.1",
 		"markdownlint-cli2": "^0.18.1",
 		"prettier": "^3.6.2",
 		"typedoc": "^0.28.9",

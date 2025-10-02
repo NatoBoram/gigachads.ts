@@ -1,7 +1,8 @@
 import gigachads from "@natoboram/gigachads.ts-config/eslint.config.js"
-import tseslint from "typescript-eslint"
+import type { Linter } from "eslint"
+import { defineConfig } from "eslint/config"
 
-export default tseslint.config(
+const config: Linter.Config[] = defineConfig(
 	...gigachads,
 	{
 		languageOptions: {
@@ -24,3 +25,5 @@ export default tseslint.config(
 		],
 	},
 )
+
+export default config
