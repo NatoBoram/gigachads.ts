@@ -18,6 +18,8 @@ type PatchTodo = RequestHandler<
 >
 
 export const patchTodo: PatchTodo = ((req, res) => {
+	if (typeof req.body !== "object") return void res.sendStatus(400)
+
 	const index = todos.findIndex(todo => todo.id === req.params.id)
 	if (index === -1) return void res.sendStatus(404)
 
