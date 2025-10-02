@@ -1,5 +1,5 @@
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": { "checkJs": true },
-	"files": ["eslint.config.ts"]
+	"files": ["eslint.config.ts", "vitest.config.ts"]
 }

@@ -92,9 +92,11 @@ export default defineConfig(
 	{
 		ignores: [
 			"**/.pnpm-store/",
+			"**/coverage/",
 			"**/dist/",
 			"**/docs/",
 			"**/node_modules/",
+
 			"**/package-lock.json",
 			"**/pnpm-lock.yaml",
 		],

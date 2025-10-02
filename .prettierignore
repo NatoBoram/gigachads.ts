@@ -1,5 +1,6 @@
 .pnpm-store/
 .turbo
+coverage/
 dist/
 docs/
 node_modules/

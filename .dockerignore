@@ -2,6 +2,7 @@
 .git
 .github
 .vscode
+coverage
 dist
 docs
 node_modules
