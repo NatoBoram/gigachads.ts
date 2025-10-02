@@ -5,19 +5,19 @@ import type {
 	TodosParams,
 } from "@natoboram/gigachads.ts-client"
 import { randomUUID } from "crypto"
-import type { RequestHandler } from "express"
-import type { LocalsObj } from "../express/locals_obj.ts"
+import type { Locals, RequestHandler } from "express"
 import { todos } from "../models/todo.ts"
 
-// eslint-disable-next-line func-style
-export const postTodo: RequestHandler<
+type PostTodo = RequestHandler<
 	TodosParams,
 	PostTodoResponse,
 	PostTodoBody,
 	PostTodoQuery,
-	LocalsObj
-> = (req, res) => {
+	Locals
+>
+
+export const postTodo: PostTodo = ((req, res) => {
 	const todo = { done: false, id: randomUUID(), text: req.body.text }
 	todos.push(todo)
 	return void res.json(todo)
-}
+}) satisfies PostTodo

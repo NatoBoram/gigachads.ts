@@ -4,21 +4,21 @@ import type {
 	DeleteTodoResponse,
 	TodoParams,
 } from "@natoboram/gigachads.ts-client"
-import type { RequestHandler } from "express"
-import type { LocalsObj } from "../express/locals_obj.ts"
+import type { Locals, RequestHandler } from "express"
 import { todos } from "../models/todo.ts"
 
-// eslint-disable-next-line func-style
-export const deleteTodo: RequestHandler<
+type DeleteTodo = RequestHandler<
 	TodoParams,
 	DeleteTodoResponse,
 	DeleteTodoBody,
 	DeleteTodoQuery,
-	LocalsObj
-> = (req, res) => {
+	Locals
+>
+
+export const deleteTodo: DeleteTodo = ((req, res) => {
 	const index = todos.findIndex(todo => todo.id === req.params.id)
 	if (index === -1) return void res.sendStatus(404)
 
 	todos.splice(index, 1)
 	return void res.json()
-}
+}) satisfies DeleteTodo
