@@ -8,6 +8,11 @@ dependencies:
           - "**/package.json"
           - "**/pnpm-lock.yaml"
 
+docker:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/Dockerfile"
+
 documentation:
   - changed-files:
       - any-glob-to-any-file:
