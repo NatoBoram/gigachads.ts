@@ -12,8 +12,8 @@ documentation:
   - changed-files:
       - any-glob-to-any-file:
           - "**/*.md"
-# I'd rather wait for that label to exist
-#github_actions:
-#  - changed-files:
-#      - any-glob-to-any-file:
-#          - .github/**
+
+github_actions:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/**

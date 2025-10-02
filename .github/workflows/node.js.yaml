@@ -74,6 +74,7 @@ jobs:
           pnpm run lint:fix
 
           git add .
+
       - id: commit
         uses: qoomon/actions--create-commit@v1
         with:

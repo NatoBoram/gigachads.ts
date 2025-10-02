@@ -47,11 +47,14 @@
 		"lint": "syncpack lint && eslint . && markdownlint-cli2 \"**/*.md\" && prettier --check .",
 		"lint:fix": "syncpack fix-mismatches; syncpack format; eslint --fix --quiet .; markdownlint-cli2 \"**/*.md\" --fix; prettier --list-different --write .",
 		"start": "turbo run start",
-		"test": "turbo run test"
+		"test": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"test:watch": "vitest"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.32.0",
 		"@natoboram/gigachads.ts-config": "workspace:*",
+		"@vitest/coverage-v8": "3.2.4",
 		"eslint": "^9.32.0",
 		"eslint-config-prettier": "^10.1.8",
 		"globals": "^16.3.0",
