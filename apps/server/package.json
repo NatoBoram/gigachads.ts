@@ -47,6 +47,7 @@
 	"repository": "github:NatoBoram/gigachads.ts",
 	"scripts": {
 		"build": "tsgo",
+		"build:watch": "tsgo --watch",
 		"clean": "rm -rf .turbo dist docs node_modules tsconfig.tsbuildinfo",
 		"dev": "node ./src/main.ts",
 		"docker": "pnpm run docker:build && pnpm run docker:run",
