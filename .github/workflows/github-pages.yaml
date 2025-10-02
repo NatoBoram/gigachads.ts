@@ -33,6 +33,12 @@ jobs:
       - run: pnpm run docs
 
       - run: |
+          echo "TOKEN=$TOKEN" >> ./apps/server/.env.local
+          pnpm run test
+        env:
+          TOKEN: ${{ secrets.SERVER_TOKEN }}
+
+      - run: |
           pnpm run test:coverage
           cp --force --recursive coverage docs/coverage
 
