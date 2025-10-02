@@ -4,18 +4,18 @@ import type {
 	GetTodosResponse,
 	TodosParams,
 } from "@natoboram/gigachads.ts-client"
-import type { RequestHandler } from "express"
-import type { LocalsObj } from "../express/locals_obj.ts"
+import type { Locals, RequestHandler } from "express"
 import { todos } from "../models/todo.ts"
 
-// eslint-disable-next-line func-style
-export const getTodos: RequestHandler<
+type GetTodos = RequestHandler<
 	TodosParams,
 	GetTodosResponse,
 	GetTodosBody,
 	GetTodosQuery,
-	LocalsObj
-> = (req, res) => {
+	Locals
+>
+
+export const getTodos: GetTodos = ((req, res) => {
 	const found = todos.filter(todo => {
 		const query = req.query.done === undefined || todo.done === req.query.done
 		const search =
@@ -36,4 +36,4 @@ export const getTodos: RequestHandler<
 	if (content.length === 0) res.status(204)
 	else res.status(200)
 	return void res.json({ content, limit, page })
-}
+}) satisfies GetTodos
