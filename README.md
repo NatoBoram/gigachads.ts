@@ -1,6 +1,6 @@
 # `@natoboram/gigachads.ts`
 
-[![Node.js CI](https://github.com/NatoBoram/gigachads.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/gigachads.ts/actions/workflows/node.js.yaml) [![Docker CI](https://github.com/NatoBoram/gigachads.ts/actions/workflows/docker.yaml/badge.svg)](https://github.com/NatoBoram/gigachads.ts/actions/workflows/docker.yaml) [![Coverage](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fnatoboram.github.io%2Fgigachads.ts%2Fcoverage%2Fcoverage-summary.json&query=total.branches.pct&suffix=%25&logo=Vitest&label=Coverage&color=acd268)](https://natoboram.github.io/gigachads.ts/coverage) [![Dependabot Updates](https://github.com/NatoBoram/gigachads.ts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/NatoBoram/gigachads.ts/actions/workflows/dependabot/dependabot-updates) [![GitHub Pages](https://github.com/NatoBoram/gigachads.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/gigachads.ts/actions/workflows/github-pages.yaml)
+[![Node.js CI](https://github.com/NatoBoram/gigachads.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/gigachads.ts/actions/workflows/node.js.yaml) [![Docker CI](https://github.com/NatoBoram/gigachads.ts/actions/workflows/docker.yaml/badge.svg)](https://github.com/NatoBoram/gigachads.ts/actions/workflows/docker.yaml) [![Coverage](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fnatoboram.github.io%2Fgigachads.ts%2Fcoverage%2Fcoverage-summary.json&query=total.branches.pct&suffix=%25&logo=Vitest&label=Coverage&color=acd268)](https://natoboram.github.io/gigachads.ts/coverage) [![GitHub Pages](https://github.com/NatoBoram/gigachads.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/gigachads.ts/actions/workflows/github-pages.yaml) [![Dependabot Updates](https://github.com/NatoBoram/gigachads.ts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/NatoBoram/gigachads.ts/actions/workflows/dependabot/dependabot-updates) [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/NatoBoram/gigachads.ts?logo=CodeRabbit&logoColor=FF570A&label=CodeRabbit%20Reviews&labelColor=171717&color=FF570A)](https://github.com/NatoBoram/gigachads.ts/pulls?q=reviewed-by%3Acoderabbitai%5Bbot%5D)
 
 The most gigachad project template for TypeScript monorepos. Based on [@natoboram/gigachad.ts](https://github.com/NatoBoram/gigachad.ts).
 
@@ -17,6 +17,7 @@ The most gigachad project template for TypeScript monorepos. Based on [@natobora
 - Manage packages with [pnpm](https://github.com/pnpm/pnpm)
 - Manage your monorepo with [Turborepo](https://github.com/vercel/turborepo)
 - Pledge your respect with the [Contributor Covenant](https://github.com/EthicalSource/contributor_covenant)
+- Review your code with [CodeRabbit](https://github.com/marketplace/coderabbitai)
 - Run with [Node.js](https://nodejs.org/api/typescript.html#type-stripping)
 - Synchronize versions with [Syncpack](https://github.com/JamieMason/syncpack)
 - Test units and calculate coverage with [Vitest](https://github.com/vitest-dev/vitest)
