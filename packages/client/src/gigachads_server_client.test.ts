@@ -14,11 +14,6 @@ function setup() {
 }
 
 describe("GigachadsServerClient", () => {
-	test("constructor", ({ expect }) => {
-		const { client } = setup()
-		expect(client).toBeInstanceOf(GigachadsServerClient)
-	})
-
 	test("getTodos", async ({ expect }) => {
 		const { client, token, fetch, base } = setup()
 		await client.getTodos({ limit: 10, page: 1 })

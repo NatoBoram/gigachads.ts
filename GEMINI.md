@@ -101,19 +101,13 @@ You'll need to re-install dependencies and re-build the project to continue deve
 - **Immutability:** Use `const` instead of `let` to avoid side-effects and mutable variables.
 - **`setup` function:** When tests in a file share the same setup, a `setup` function can be used to reduce code duplication. It should initialize the variables needed for the tests.
 - **Type-safe tests:**
-	- Infer types from functions to make tests more robust.
-	- Use generic parameters to ensure type safety.
-- **Promise-wrapped async tests:** Async tests are written using a `Promise` that resolves with the result of the handler. This is a consistent pattern across all the handler tests. This is done to avoid side-effects and mutable variables, which makes the code easier to read and reason about.
+  - Infer types from functions to make tests more robust.
+  - Use generic parameters to ensure type safety.
+- **Promise-wrapped async tests:** Side-effects can be avoided using a `Promise` that resolves with the result of the handler, which makes the code easier to read and reason about.
 
-	```ts
-	const response = await new Promise<GetTodosResponse>(resolve => {
-		const res = { json: resolve, status: (_: number) => res } as Response
-		getTodos(req, res, vi.fn())
-	})
-	```
-
-- **Fluent response mocking:** The mock response object in the handler tests uses a fluent interface for the `status` method, which allows chaining.
-
-	```ts
-	const res = { json: resolve, status: (_: number) => res } as Response
-	```
+  ```ts
+  const response = await new Promise<GetTodosResponse>(resolve => {
+  	const res = { json: resolve, status: (_: number) => res } as Response
+  	getTodos(req, res, vi.fn())
+  })
+  ```

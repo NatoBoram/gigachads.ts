@@ -46,4 +46,24 @@ describe("putTodo", () => {
 
 		expect(status).toBe(404)
 	})
+
+	test("500", async ({ expect }) => {
+		const todo: Todo = { id: randomUUID(), text: "test", done: false }
+		todos.push(todo)
+
+		const req = {
+			params: { id: todo.id },
+			body: { done: true, text: "text" },
+		} as Request
+
+		// Simulate a bug where the found index does not exist
+		vi.spyOn(todos, "findIndex").mockReturnValue(1)
+
+		const status = await new Promise<number>(resolve => {
+			const res = { sendStatus: resolve, json: () => res } as Response
+			putTodo(req, res, vi.fn())
+		})
+
+		expect(status).toBe(500)
+	})
 })
