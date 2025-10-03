@@ -113,7 +113,7 @@ You'll need to re-install dependencies and re-build the project to continue deve
 
 #### Error Handling
 
-- Do not use `eslint-disable`, `@ts-expect-error`, or `@ts-ignore` without a clear inline comment explaining why it's necessary.
+- Do not use `eslint-disable`, `eslint-disable-next-line`, `@ts-expect-error`, or `@ts-ignore` without a clear inline comment explaining why it's necessary.
 - Use `.catch()` for error handling instead of `try/catch` for control flow.
 - Type caught errors as `unknown`.
 - Log the full error value instead of just the message.
@@ -168,6 +168,10 @@ You'll need to re-install dependencies and re-build the project to continue deve
 - Move nested named function declarations to the top level.
 - Use `for` loops instead of `while` loops.
 - Move `let` declarations into `for` loop headers when possible.
+
+### Dependency Management
+
+- Manually editing dependencies in `package.json` is completely forbidden at all times. This can only be done by using the `pnpm` command.
 
 ### Testing Conventions
 
