@@ -145,7 +145,15 @@ export const getTodo: GetTodo = ((req, res) => {
 ### Dependency Management
 
 - Use `pnpm` commands to manage dependencies.
+- Direct editing of dependencies in `package.json` is forbidden. You can only edit dependencies using `pnpm`.
 - Prefer existing SDKs or packages over reimplementing DTOs for third-party APIs.
+
+### Dependency Upgrades
+
+```sh
+pnpm update --recursive
+pnpm outdated --recursive
+```
 
 ## Project-Specific Integrations
 
