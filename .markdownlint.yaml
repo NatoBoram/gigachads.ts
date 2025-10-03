@@ -1,4 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/DavidAnson/markdownlint/refs/heads/main/schema/markdownlint-config-schema-strict.json
 default: true
 line-length: false
+no-hard-tabs:
+  code_blocks: false
 no-inline-html: false
