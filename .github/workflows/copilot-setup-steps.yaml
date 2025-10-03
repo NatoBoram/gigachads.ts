@@ -1,0 +1,26 @@
+name: Copilot Setup Steps
+
+on:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yaml
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yaml
+
+jobs:
+  copilot-setup-steps:
+    permissions:
+      contents: read
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          cache: pnpm
+          node-version: latest
+      - run: pnpm install
+      - run: pnpm build

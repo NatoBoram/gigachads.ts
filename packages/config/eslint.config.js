@@ -2,6 +2,7 @@ import eslint from "@eslint/js"
 import prettier from "eslint-config-prettier"
 import { defineConfig } from "eslint/config"
 import globals from "globals"
+import { fileURLToPath } from "node:url"
 import tseslint from "typescript-eslint"
 
 export default defineConfig(
@@ -10,7 +11,9 @@ export default defineConfig(
 			globals: { ...globals.browser, ...globals.node },
 			parserOptions: {
 				ecmaVersion: "latest",
-				project: "./tsconfig.eslint.json",
+				project: fileURLToPath(
+					new URL("./tsconfig.eslint.json", import.meta.url),
+				),
 				sourceType: "module",
 			},
 		},
