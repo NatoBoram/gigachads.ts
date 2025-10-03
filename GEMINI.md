@@ -10,6 +10,17 @@ This is a TypeScript monorepo project named `@natoboram/gigachads.ts`. It serves
   - **Linting:** `eslint` and `prettier` for code style and formatting.
   - **Monorepo Management:** `pnpm` workspaces and `turborepo` for managing the monorepo.
   - **Documentation:** `typedoc` for generating documentation.
+  - **Containerization:** `Docker` for containerizing the application.
+  - **CI/CD:** GitHub Actions for continuous integration and delivery. `act` for running workflows locally.
+  - **Dependency Management:** `dependabot` for automatic dependency updates. `syncpack` for keeping package versions in sync.
+  - **Development Environment:** `vscode` with recommended extensions for a better development experience. `gh` for interacting with GitHub from the command line.
+
+## Packages
+
+- [@natoboram/gigachads.ts](.)
+- [@natoboram/gigachads.ts-server](apps/server)
+- [@natoboram/gigachads.ts-client](packages/client)
+- [@natoboram/gigachads.ts-config](packages/config)
 
 ## Building and Running
 
@@ -51,6 +62,8 @@ To build the entire project:
 pnpm build
 ```
 
+It might be necessary to build the project before linting it, particularly if a workspace dependency was modified.
+
 ### Testing
 
 To run the tests:
@@ -87,7 +100,7 @@ If you need to delete all temporary files, run:
 pnpm run clean
 ```
 
-You'll need to re-install dependencies and re-build the project to continue developing after that.
+You'll need to re-install dependencies and re-build the project to continue developing after that, so don't do it unless you really need to.
 
 ## Development Conventions
 
@@ -170,3 +183,9 @@ You'll need to re-install dependencies and re-build the project to continue deve
   	getTodos(req, res, vi.fn())
   })
   ```
+
+- **Naming:**
+  - `describe` blocks are named after the function or class being tested.
+  - `test` blocks are named after the expected outcome (e.g., an HTTP status code) or the method being tested.
+- **Mocks:** Use mocks sparingly and only when necessary.
+- **Coverage:** Include tests for error cases and edge conditions.
