@@ -33,6 +33,7 @@ This is a TypeScript monorepo with pnpm workspaces and Turborepo that follows a 
 - **No `eslint-disable` or `@ts-ignore`** without clear inline comments explaining necessity
 - **Log as `warn` instead of `error`** when execution continues
 - **Add `.catch()` to database calls** and async operations
+- **Handle Express query parameters** with nullish coalescing: `Number(req.query.limit ?? "10")`
 
 ### Express.js Handlers Pattern
 
@@ -64,6 +65,13 @@ export const getTodo: GetTodo = ((req, res) => {
   	const res = { json: resolve, status: (_: number) => res } as Response
   	getTodos(req, res, vi.fn())
   })
+  ```
+
+- **Type-safe handler tests** - infer types from handler functions:
+
+  ```ts
+  type Request = Parameters<typeof getTodos>[0]
+  type Response = Parameters<typeof getTodos>[1]
   ```
 
 - **Setup functions** for shared test initialization
@@ -122,9 +130,9 @@ pnpm test:coverage                          # Run tests with coverage
 ### Docker Operations
 
 ```bash
-pnpm docker:build:server    # Build server image
-pnpm docker:run:server      # Run container
-pnpm docker:kill:server     # Kill running containers
+pnpm docker:build:server # Build server image
+pnpm docker:run:server   # Run container
+pnpm docker:kill:server  # Kill running containers
 ```
 
 ## Project-Specific Integrations
