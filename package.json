@@ -59,13 +59,13 @@
 		"eslint-config-prettier": "^10.1.8",
 		"globals": "^16.5.0",
 		"jiti": "^2.6.1",
-		"markdownlint-cli2": "^0.18.1",
-		"prettier": "^3.6.2",
+		"markdownlint-cli2": "^0.19.1",
+		"prettier": "^3.7.3",
 		"syncpack": "^13.0.4",
 		"turbo": "^2.6.0",
 		"typedoc": "^0.28.14",
 		"typescript": "5.9.3",
-		"typescript-eslint": "~8.46.3",
+		"typescript-eslint": "~8.48.0",
 		"vitest": "^3.2.4"
 	},
 	"workspaces": [
