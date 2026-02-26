@@ -54,6 +54,7 @@
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@natoboram/gigachads.ts-config": "workspace:*",
+		"@types/node": "^25.3.0",
 		"@typescript/native-preview": "7.0.0-dev.20260225.1",
 		"@vitest/coverage-v8": "^4.0.18",
 		"eslint": "^10.0.2",
