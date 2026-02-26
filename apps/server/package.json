@@ -86,7 +86,7 @@
 		"typescript-eslint": "~8.56.1",
 		"vitest": "^4.0.18"
 	},
-	"packageManager": "pnpm@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a",
+	"packageManager": "pnpm@10.30.2+sha512.36cdc707e7b7940a988c9c1ecf88d084f8514b5c3f085f53a2e244c2921d3b2545bc20dd4ebe1fc245feec463bb298aecea7a63ed1f7680b877dc6379d8d0cb4",
 	"type": "module",
 	"types": "dist/index.d.ts",
 	"module": "dist/index.js"
