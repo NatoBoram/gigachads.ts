@@ -15,6 +15,7 @@ export default defineConfig(
 					new URL("./tsconfig.eslint.json", import.meta.url),
 				),
 				sourceType: "module",
+				warnOnUnsupportedTypeScriptVersion: false,
 			},
 		},
 	},
