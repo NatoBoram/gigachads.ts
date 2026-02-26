@@ -29,17 +29,17 @@ export class GigachadsServerClient {
 		id: TodoParams["id"],
 	): Promise<Response<DeleteTodoResponse>> {
 		const url = newUrl(`/todos/${id}`, this.#base)
-		return this.delete(url)
+		return this.#delete(url)
 	}
 
 	async getTodo(id: TodoParams["id"]): Promise<Response<GetTodoResponse>> {
 		const url = newUrl(`/todos/${id}`, this.#base)
-		return this.get(url)
+		return this.#get(url)
 	}
 
 	async getTodos(query: GetTodosQuery): Promise<Response<GetTodosResponse>> {
 		const url = newUrl("/todos", this.#base, { ...query })
-		return this.get(url)
+		return this.#get(url)
 	}
 
 	async patchTodo(
@@ -47,12 +47,12 @@ export class GigachadsServerClient {
 		body: PatchTodoBody,
 	): Promise<Response<PatchTodoResponse>> {
 		const url = newUrl(`/todos/${id}`, this.#base)
-		return this.patch(url, body)
+		return this.#patch(url, body)
 	}
 
 	async postTodo(body: PostTodoBody): Promise<Response<PostTodoResponse>> {
 		const url = newUrl("/todos", this.#base)
-		return this.post(url, body)
+		return this.#post(url, body)
 	}
 
 	async putTodo(
@@ -60,20 +60,20 @@ export class GigachadsServerClient {
 		body: PutTodoBody,
 	): Promise<Response<PutTodoResponse>> {
 		const url = newUrl(`/todos/${id}`, this.#base)
-		return this.put(url, body)
+		return this.#put(url, body)
 	}
 
-	private async delete<T, E = unknown>(
+	async #delete<T, E = unknown>(
 		input: URL,
 		headers: HeadersInit = {},
 	): Promise<Response<T, E>> {
 		return this.#fetch(input, {
-			headers: this.deleteHeaders(headers),
+			headers: this.#deleteHeaders(headers),
 			method: "DELETE",
 		})
 	}
 
-	private deleteHeaders(init?: HeadersInit): Headers {
+	#deleteHeaders(init?: HeadersInit): Headers {
 		const headers = new Headers(init)
 
 		if (!headers.has("Authorization"))
@@ -82,17 +82,17 @@ export class GigachadsServerClient {
 		return headers
 	}
 
-	private async get<T, E = unknown>(
+	async #get<T, E = unknown>(
 		input: URL,
 		headers: HeadersInit = {},
 	): Promise<Response<T, E>> {
 		return this.#fetch(input, {
-			headers: this.getHeaders(headers),
+			headers: this.#getHeaders(headers),
 			method: "GET",
 		})
 	}
 
-	private getHeaders(init?: HeadersInit): Headers {
+	#getHeaders(init?: HeadersInit): Headers {
 		const headers = new Headers(init)
 
 		if (!headers.has("Accept")) headers.set("Accept", "application/json")
@@ -102,19 +102,19 @@ export class GigachadsServerClient {
 		return headers
 	}
 
-	private async patch<T, E = unknown>(
+	async #patch<T, E = unknown>(
 		input: URL,
 		body: unknown,
 		headers: HeadersInit = {},
 	): Promise<Response<T, E>> {
 		return this.#fetch(input, {
-			headers: this.patchHeaders(headers),
+			headers: this.#patchHeaders(headers),
 			method: "PATCH",
 			body: JSON.stringify(body),
 		})
 	}
 
-	private patchHeaders(init?: HeadersInit): Headers {
+	#patchHeaders(init?: HeadersInit): Headers {
 		const headers = new Headers(init)
 
 		if (!headers.has("Accept")) headers.set("Accept", "application/json")
@@ -126,19 +126,19 @@ export class GigachadsServerClient {
 		return headers
 	}
 
-	private async post<T, E = unknown>(
+	async #post<T, E = unknown>(
 		input: URL,
 		body: unknown,
 		headers: HeadersInit = {},
 	): Promise<Response<T, E>> {
 		return this.#fetch(input, {
-			headers: this.postHeaders(headers),
+			headers: this.#postHeaders(headers),
 			method: "POST",
 			body: JSON.stringify(body),
 		})
 	}
 
-	private postHeaders(init?: HeadersInit): Headers {
+	#postHeaders(init?: HeadersInit): Headers {
 		const headers = new Headers(init)
 
 		if (!headers.has("Accept")) headers.set("Accept", "application/json")
@@ -150,19 +150,19 @@ export class GigachadsServerClient {
 		return headers
 	}
 
-	private async put<T, E = unknown>(
+	async #put<T, E = unknown>(
 		input: URL,
 		body: unknown,
 		headers: HeadersInit = {},
 	): Promise<Response<T, E>> {
 		return this.#fetch(input, {
-			headers: this.putHeaders(headers),
+			headers: this.#putHeaders(headers),
 			method: "PUT",
 			body: JSON.stringify(body),
 		})
 	}
 
-	private putHeaders(init?: HeadersInit): Headers {
+	#putHeaders(init?: HeadersInit): Headers {
 		const headers = new Headers(init)
 
 		if (!headers.has("Accept")) headers.set("Accept", "application/json")
