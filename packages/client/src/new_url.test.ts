@@ -23,4 +23,15 @@ describe("newUrl", () => {
 		const url = newUrl("param", new URL("https://example.org/path"))
 		expect(url.toString()).toBe(expected)
 	})
+
+	test("/", ({ expect }) => {
+		const url = newUrl("/", new URL("https://example.org/path/param/"))
+		expect(url.toString()).toBe("https://example.org/path/param/")
+	})
+
+	test("with date", ({ expect }) => {
+		const date = new Date()
+		const url = newUrl("/", new URL("https://example.org/path"), { date })
+		expect(url.searchParams.get("date")).toBe(date.toISOString())
+	})
 })
