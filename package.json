@@ -66,7 +66,7 @@
 		"syncpack": "^14.0.0",
 		"turbo": "^2.8.11",
 		"typedoc": "^0.28.17",
-		"typescript": "6.0.0-beta",
+		"typescript": "6.0.0-dev.20260225",
 		"typescript-eslint": "~8.56.1",
 		"vitest": "^4.0.18"
 	},

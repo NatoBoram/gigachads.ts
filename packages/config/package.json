@@ -50,7 +50,7 @@
 		"globals": "^17.3.0",
 		"markdownlint-cli2": "^0.21.0",
 		"prettier": "^3.8.1",
-		"typescript": "6.0.0-beta",
+		"typescript": "6.0.0-dev.20260225",
 		"typescript-eslint": "~8.56.1"
 	},
 	"packageManager": "pnpm@10.30.2+sha512.36cdc707e7b7940a988c9c1ecf88d084f8514b5c3f085f53a2e244c2921d3b2545bc20dd4ebe1fc245feec463bb298aecea7a63ed1f7680b877dc6379d8d0cb4",
