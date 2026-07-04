@@ -63,7 +63,7 @@ describe("getTodos", () => {
 		})
 
 		test("float limit", async ({ expect }) => {
-			const req = { query: { limit: 1.5 } as GetTodosQuery } as Request
+			const req = { query: { limit: 1.5 } } as Request
 
 			const response = await new Promise(resolve => {
 				const res = { sendStatus: resolve } as Response
