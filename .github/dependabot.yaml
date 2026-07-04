@@ -8,6 +8,10 @@ updates:
     commit-message:
       prefix: "⬆️ "
     groups:
+      security:
+        applies-to: security-updates
+        patterns:
+          - "*"
       patch:
         update-types:
           - patch
@@ -23,6 +27,7 @@ updates:
         patterns:
           - "*eslint*"
           - globals
+          - jiti
       prettier:
         patterns:
           - "*prettier*"
@@ -33,6 +38,25 @@ updates:
           - typedoc
 
   - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+      timezone: America/Toronto
+    commit-message:
+      prefix: "⬆️ "
+    groups:
+      security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+      actions:
+        patterns:
+          - actions/*
+      docker:
+        patterns:
+          - docker/*
+
+  - package-ecosystem: docker
     directory: /
     schedule:
       interval: monthly
