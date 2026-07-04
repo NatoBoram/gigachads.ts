@@ -37,6 +37,6 @@ describe("useToken", () => {
 		const next = vi.fn()
 		useToken(req, res, next)
 
-		expect(next).toBeCalled()
+		expect(next).toHaveBeenCalled()
 	})
 })
