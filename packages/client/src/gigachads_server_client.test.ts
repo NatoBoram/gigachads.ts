@@ -28,7 +28,7 @@ describe("GigachadsServerClient", () => {
 
 		const init: RequestInit = { headers, method: "GET" }
 
-		expect(fetch).toBeCalledWith<FetchParameters>(url, init)
+		expect(fetch).toHaveBeenCalledWith<FetchParameters>(url, init)
 	})
 
 	test("getTodo", async ({ expect }) => {
@@ -43,7 +43,7 @@ describe("GigachadsServerClient", () => {
 		const url = new URL(`todos/${id}`, base)
 		const init: RequestInit = { headers, method: "GET" }
 
-		expect(fetch).toBeCalledWith<FetchParameters>(url, init)
+		expect(fetch).toHaveBeenCalledWith<FetchParameters>(url, init)
 	})
 
 	test("deleteTodo", async ({ expect }) => {
@@ -57,7 +57,7 @@ describe("GigachadsServerClient", () => {
 		const url = new URL(`todos/${id}`, base)
 		const init = { headers, method: "DELETE" }
 
-		expect(fetch).toBeCalledWith<FetchParameters>(url, init)
+		expect(fetch).toHaveBeenCalledWith<FetchParameters>(url, init)
 	})
 
 	test("patchTodo", async ({ expect }) => {
@@ -78,7 +78,7 @@ describe("GigachadsServerClient", () => {
 			body: JSON.stringify(body),
 		}
 
-		expect(fetch).toBeCalledWith<FetchParameters>(url, init)
+		expect(fetch).toHaveBeenCalledWith<FetchParameters>(url, init)
 	})
 
 	test("postTodo", async ({ expect }) => {
@@ -98,7 +98,7 @@ describe("GigachadsServerClient", () => {
 			body: JSON.stringify(body),
 		}
 
-		expect(fetch).toBeCalledWith<FetchParameters>(url, init)
+		expect(fetch).toHaveBeenCalledWith<FetchParameters>(url, init)
 	})
 
 	test("putTodo", async ({ expect }) => {
@@ -119,6 +119,6 @@ describe("GigachadsServerClient", () => {
 			body: JSON.stringify(body),
 		}
 
-		expect(fetch).toBeCalledWith<FetchParameters>(url, init)
+		expect(fetch).toHaveBeenCalledWith<FetchParameters>(url, init)
 	})
 })
