@@ -47,7 +47,7 @@ jobs:
           cp --force --recursive apps/server/coverage docs/coverage-server
           cp --force --recursive packages/client/coverage docs/coverage-client
 
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: docs
 
