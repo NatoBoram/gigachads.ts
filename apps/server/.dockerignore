@@ -6,7 +6,6 @@ node_modules
 
 # Files
 .dockerignore
-.gitignore
 .prettierignore
 .prettierrc.yaml
 *.md
