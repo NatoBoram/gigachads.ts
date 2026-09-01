@@ -54,12 +54,12 @@
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@natoboram/gigachads.ts-config": "workspace:*",
-		"@types/node": "^26.1.2",
+		"@types/node": "^26.4.0",
 		"@typescript/native-preview": "7.0.0-dev.20260301.1",
 		"@vitest/coverage-v8": "^4.1.10",
-		"eslint": "^10.8.0",
+		"eslint": "^10.9.1",
 		"eslint-config-prettier": "^10.1.8",
-		"globals": "^17.8.0",
+		"globals": "^17.11.0",
 		"jiti": "^2.7.0",
 		"markdownlint-cli2": "^0.23.2",
 		"prettier": "^3.9.6",
@@ -67,7 +67,7 @@
 		"turbo": "^2.10.8",
 		"typedoc": "^0.28.20",
 		"typescript": "6.0.3",
-		"typescript-eslint": "~8.65.0",
+		"typescript-eslint": "~8.68.0",
 		"vitest": "^4.1.10"
 	},
 	"workspaces": [
